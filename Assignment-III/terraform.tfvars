@@ -1,0 +1,11 @@
+az-a   = "us-west-1a"
+az-b   = "us-west-1b"
+vpc_cidr = "10.1.0.0/16"
+project_name = "Test"
+keyname = "Lab-SSH-Key"
+private_instance_name = "myprivate_instance"
+private_instance_type = "t2.medium"
+bastion_instance_name = "Bastion_Host"
+bastion_instance_type = "t2.medium"
+sg_name = "Lab-Security-Group"
+
