@@ -16,4 +16,5 @@ module "ec2" {
   instance_type    = var.instance_type
   public_subnet_id = module.vpc.public_subnet_id
   security_group   = module.securitygroup.security_group
+  ami              = var.ami
 }

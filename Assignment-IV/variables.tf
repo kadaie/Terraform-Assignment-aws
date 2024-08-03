@@ -19,3 +19,7 @@ variable "sg_name" {
 variable "instance_type" {
   type = string
 }
+variable "ami" {
+  type    = string
+  default = "ami-0b36f2748d7665334"
+}
