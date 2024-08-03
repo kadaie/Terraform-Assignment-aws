@@ -6,3 +6,4 @@ variable "bastion_instance_name" {}
 variable "private_subnet_id" {}
 variable "public_subnet_id" {}
 variable "security_group_id" {}
+variable "ami" {}

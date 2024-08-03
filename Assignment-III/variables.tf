@@ -17,3 +17,6 @@ variable "bastion_instance_type" {
 }
 variable "bastion_instance_name" {}
 variable "sg_name" {}
+variable "ami" {
+  type = string
+}

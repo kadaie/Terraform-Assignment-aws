@@ -86,7 +86,7 @@ resource "aws_route_table" "lab-public-route-table" {
 
 # Associate private route table  with private subnets
 resource "aws_route_table_association" "private_subnet_association" {
-  count = 2
+  count          = 2
   subnet_id      = aws_subnet.lab-private-subnets[count.index].id
   route_table_id = aws_route_table.private_route_table.id
 }

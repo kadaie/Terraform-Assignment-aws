@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "./modules/vpc"
+  source             = "./modules/vpc"
   public_subnet_name = var.public_subnet_name
   igw_name           = var.igw_name
   rtb_name           = var.rtb_name

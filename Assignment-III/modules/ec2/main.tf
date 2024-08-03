@@ -8,10 +8,10 @@ resource "aws_key_pair" "lab_key" {
 }
 # Create EC2 instance in private subnet
 resource "aws_instance" "private_instance" {
-  ami           = "ami-03ed1381c73a5660e" 
-  instance_type = var.private_instance_type
-  subnet_id     = var.private_subnet_id
-  key_name      = aws_key_pair.lab_key.key_name
+  ami             = var.ami
+  instance_type   = var.private_instance_type
+  subnet_id       = var.private_subnet_id
+  key_name        = aws_key_pair.lab_key.key_name
   security_groups = [var.security_group_id]
 
   tags = {
@@ -20,10 +20,10 @@ resource "aws_instance" "private_instance" {
 }
 # Create Bastion host in public subnet
 resource "aws_instance" "bastion_host" {
-  ami           = "ami-03ed1381c73a5660e" 
-  instance_type = var.bastion_instance_type
-  subnet_id     = var.public_subnet_id
-  key_name      = aws_key_pair.lab_key.key_name
+  ami             = var.ami
+  instance_type   = var.bastion_instance_type
+  subnet_id       = var.public_subnet_id
+  key_name        = aws_key_pair.lab_key.key_name
   security_groups = [var.security_group_id]
 
   tags = {
@@ -31,5 +31,5 @@ resource "aws_instance" "bastion_host" {
   }
 }
 resource "aws_eip" "bastion_eip" {
-  instance = "${aws_instance.bastion_host.id}"
+  instance = aws_instance.bastion_host.id
 }
